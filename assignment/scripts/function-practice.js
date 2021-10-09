@@ -65,10 +65,10 @@ function findValue(array){
       let foundValue = array[i];
       console.log(foundValue);
       if (foundValue === 'apples') {
-        console.log('found at:', i);
+        console.log('Apples were found at:', i);
         console.log(true);
       } else {
-          console.log('Did not find');
+          console.log('Not apple');
           console.log(false);
       };//End if,then
     };//End for statement
@@ -81,24 +81,47 @@ console.log(findValue(array));//Returns undefined??
 // 8. Function to check if a letter is the first letter in a
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
-}
+  if (string.startsWith(letter)) {
+    return true;
+  } else {
+    return false;
+  };//End if statement
+};//End isFirstLetter
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+function sumAll( amount ) {
+  let sum = 0;
+  for (let s = 0; s < amount.length; s++) {
+    sum += amount[s];
+  };
   // TODO: loop to add items
   return sum;
-}
 
+}
+let newArray = [3,5,7,4];
+console.log(sumAll( newArray ));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-
-
+function positive( theArray ) {
+  let pos = theArray.filter(num => num > 0);
+  return pos;
+};//End positive
+let thisArr = [-4,0,4,5,-2];
+console.log(positive(thisArr));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or
 //     CodeWars(https://www.codewars.com/). Then describe it
 //     here in a comment, write the function, and test it!
+
+//This is a matchstick problem where you are building houses with matchsticks the problem says,
+//Create a function that takes a number (step) as an argument and returns the number
+//of matchsticks in that step. Each step is a new house build with matchsticks.
+//Each house consists of 6 matchsticks, however they are touching which means that each aditional house will only
+//need five match matchsticks
+function matches(step) {
+  return step === 0 ? 0 : 5 * step + 1;
+};
+console.log(matches(1));
