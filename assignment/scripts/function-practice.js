@@ -65,12 +65,11 @@ function findValue(value, array){
       if (array[i] === value) {
         return true;
       };//End if,then
-
     };//End for statement
     return false;
 };//End function
-console.log(findValue('hippos',myArray));//Returns undefined??
-
+console.log(findValue('hippos',myArray));
+console.log(findValue('apples',myArray));
 // ----------------------
 // Stretch Goals
 // ----------------------
